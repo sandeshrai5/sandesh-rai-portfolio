@@ -24,7 +24,7 @@ export function ResearchSection() {
                 {project.image ? (
                   <div className="relative h-48 w-full overflow-hidden rounded-md">
                     <Image
-                      src={project.image}
+                      src={project.images}
                       alt={project.title}
                       fill
                       className="object-cover"
