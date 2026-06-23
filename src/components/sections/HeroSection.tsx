@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDown, BookOpen, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,15 +19,22 @@ export function HeroSection() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-16">
-        {/* Profile photo placeholder */}
+        {/* Profile photo */}
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <div className="w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full bg-secondary border-4 border-teal/30 flex items-center justify-center text-muted-foreground text-4xl font-bold">
-            SR
+          <div className="w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full border-4 border-teal/30 overflow-hidden">
+            <Image
+              src={personalInfo.profileImage}
+              alt={personalInfo.name}
+              width={160}
+              height={160}
+              className="w-full h-full object-cover"
+              priority
+            />
           </div>
         </motion.div>
 

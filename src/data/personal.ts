@@ -12,7 +12,7 @@ export const personalInfo: PersonalInfo = {
     "https://www.researchgate.net/profile/Sandesh-Rai-5?ev=hdr_xprf",
   googleScholar:
     "https://scholar.google.com/citations?user=ZHuqVhsAAAAJ&hl=en&oi=ao",
-  profileImage: "/images/profile.jpg",
+  profileImage: "/images/profile.png",
 };
 
 export const secondaryEmails = [
