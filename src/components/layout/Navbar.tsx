@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { ThemeToggle } from "./ThemeToggle";
@@ -32,7 +32,16 @@ export function Navbar() {
               {item.label}
             </a>
           ))}
-          <div className="ml-2">
+          <a
+            href="/Sandesh_Rai_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-1.5 ml-2 text-sm font-medium text-teal border border-teal/50 rounded-md hover:bg-teal/10 transition-colors flex items-center gap-1.5"
+          >
+            <FileText className="h-3.5 w-3.5" />
+            View CV
+          </a>
+          <div className="ml-1">
             <ThemeToggle />
           </div>
         </div>
@@ -57,6 +66,17 @@ export function Navbar() {
                     </a>
                   </SheetClose>
                 ))}
+                <SheetClose>
+                  <a
+                    href="/Sandesh_Rai_CV.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-3 text-sm font-medium text-teal hover:bg-teal/10 rounded-md transition-colors flex items-center gap-2"
+                  >
+                    <FileText className="h-4 w-4" />
+                    View CV
+                  </a>
+                </SheetClose>
               </nav>
             </SheetContent>
           </Sheet>
