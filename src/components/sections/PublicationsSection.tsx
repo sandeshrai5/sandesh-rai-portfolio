@@ -1,117 +1,59 @@
 "use client";
 
-import { FileText, Clock, CheckCircle, Send } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { SectionWrapper } from "@/components/shared/SectionWrapper";
 import { SectionContactStrip } from "@/components/shared/SectionContactStrip";
-import { publications, getPublicationsByStatus } from "@/data/publications";
-import type { Publication } from "@/types";
-
-const statusConfig = {
-  published: {
-    label: "Published",
-    icon: CheckCircle,
-    variant: "default" as const,
-  },
-  accepted: {
-    label: "Accepted",
-    icon: CheckCircle,
-    variant: "default" as const,
-  },
-  submitted: {
-    label: "Submitted",
-    icon: Send,
-    variant: "secondary" as const,
-  },
-  in_progress: {
-    label: "In Progress",
-    icon: Clock,
-    variant: "outline" as const,
-  },
-};
+import { getPublicationsByStatus } from "@/data/publications";
+import { Publication } from "@/types";
 
 export function PublicationsSection() {
   const grouped = getPublicationsByStatus();
-  const hasPublications = publications.length > 0 && publications[0].id !== "pub-placeholder";
+  const statusLabels: Record<string, string> = {
+    published: "Published",
+    in_progress: "In Progress",
+  };
 
   return (
     <SectionWrapper
       id="publications"
       title="Publications"
-      subtitle="Journal articles, conference papers, and ongoing research work"
+      subtitle="Research papers and conference proceedings"
     >
-      {hasPublications ? (
-        <div className="max-w-3xl mx-auto space-y-8">
-          {(["published", "accepted", "submitted", "in_progress"] as const).map(
-            (status) => {
-              const items: Publication[] = grouped[status];
-              if (items.length === 0) return null;
-              const config = statusConfig[status];
-              const StatusIcon = config.icon;
-
-              return (
-                <div key={status}>
-                  <ScrollReveal>
-                    <div className="flex items-center gap-2 mb-4">
-                      <StatusIcon className="h-4 w-4 text-teal" />
-                      <h3 className="text-lg font-semibold text-primary">
-                        {config.label}
-                      </h3>
-                    </div>
-                  </ScrollReveal>
-                  <div className="space-y-3">
-                    {items.map((pub: Publication, index: number) => (
-                      <ScrollReveal key={pub.id} delay={index * 0.1}>
-                        <div className="p-4 rounded-lg border border-border/50 bg-card">
-                          <div className="flex items-start gap-3">
-                            <FileText className="h-5 w-5 text-teal mt-0.5 shrink-0" />
-                            <div className="space-y-1">
-                              <h4 className="text-sm font-medium text-foreground leading-snug">
-                                {pub.url ? (
-                                  <a
-                                    href={pub.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="hover:text-teal transition-colors"
-                                  >
-                                    {pub.title}
-                                  </a>
-                                ) : (
-                                  pub.title
-                                )}
-                              </h4>
-                              <p className="text-xs text-muted-foreground">
-                                {pub.authors}
-                              </p>
-                              <div className="flex items-center gap-2 flex-wrap">
-                                {(pub.journal || pub.conference) && (
-                                  <span className="text-xs text-muted-foreground italic">
-                                    {pub.journal || pub.conference}
-                                  </span>
-                                )}
-                                <Badge variant={config.variant} className="text-xs">
-                                  {pub.year}
-                                </Badge>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </ScrollReveal>
-                    ))}
-                  </div>
-                </div>
-              );
-            }
-          )}
+      {Object.keys(grouped).length === 0 ? (
+        <div className="text-center text-muted-foreground py-12">
+          Publications will be added soon.
         </div>
       ) : (
-        <ScrollReveal>
-          <div className="text-center py-8 text-muted-foreground">
-            <FileText className="h-12 w-12 mx-auto mb-3 opacity-30" />
-            <p>Publications will be added here soon.</p>
-          </div>
-        </ScrollReveal>
+        <div className="space-y-8 max-w-4xl mx-auto">
+          {Object.entries(grouped).map(([status, pubs]) => {
+            const items = pubs as Publication[];
+            if (!items || items.length === 0) return null;
+            return (
+              <div key={status}>
+                <h3 className="text-lg font-semibold text-primary mb-4">
+                  {statusLabels[status] || status}
+                </h3>
+                <div className="space-y-4">
+                  {items.map((pub: Publication, index: number) => (
+                    <ScrollReveal key={pub.id} delay={index * 0.05}>
+                      <div className="rounded-lg border p-5 space-y-2">
+                        <h4 className="text-sm font-semibold text-primary leading-snug">
+                          {pub.title}
+                        </h4>
+                        <p className="text-xs text-muted-foreground">
+                          {pub.authors}
+                        </p>
+                        <p className="text-xs text-muted-foreground italic">
+                          {pub.journal} ({pub.year})
+                        </p>
+                      </div>
+                    </ScrollReveal>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
       )}
       <SectionContactStrip />
     </SectionWrapper>
