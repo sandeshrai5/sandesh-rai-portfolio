@@ -10,6 +10,7 @@ const aboutPoints = [
   "Hands-on experience in climate data analysis, bias correction of climate projections, watershed modeling, and geospatial analysis using ArcGIS and QGIS.",
   "Passionate about applying scientific research to solve real-world environmental challenges, particularly in the context of Nepal's water resources and agricultural systems.",
   "Proficient in R programming for statistical analysis, data visualization, and climate data processing, with a focus on future climate scenario assessments.",
+  "An Agricultural Engineer focused on advancing sustainable agricultural mechanization and developing climate-adaptive technologies for resilient farming systems.",
 ];
 
 export function AboutSection() {
