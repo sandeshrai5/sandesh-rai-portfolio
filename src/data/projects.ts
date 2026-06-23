@@ -1,61 +1,49 @@
-import type { Project } from "@/types";
+import { Project } from '@/types';
 
 export const projects: Project[] = [
   {
-    id: "climate-water-irrigation",
-    title:
-      "Assessment of Climate Change Impact on Future Water Availability and Irrigation Water Demand: Chanda Mohana Irrigation Project, Nepal",
+    id: 'chanda-mohana-irrigation',
+    title: 'Chanda Mohana Irrigation Project',
     description:
-      "Comprehensive assessment of climate change impacts on water availability and irrigation demand under future climate scenarios.",
-    tags: ["Climate Projections", "SSP245", "SSP585", "River Flow", "Irrigation"],
+      'Assessment and analysis of the Chanda Mohana irrigation system, focusing on water resource management, canal efficiency, and agricultural productivity in the region. The study evaluated existing irrigation infrastructure and proposed improvements for sustainable water distribution to farmlands.',
     details: [
-      "Climate projections generated under SSP245 and SSP585 scenarios using downscaled GCM data",
-      "Assessed future river flow availability in the Chanda Mohana Irrigation command area",
-      "Analyzed irrigation water demand under changing climatic conditions",
-      "Evaluated the gap between future water supply and irrigation demand",
+      'Field-based assessment of irrigation canal system and water flow measurements',
+      'Analysis of water availability and demand for agricultural lands',
+      'Evaluation of canal efficiency and seepage losses',
+      'Proposed sustainable water management strategies for local farmers',
     ],
-    image: "/images/project-1.jpg", // Replace with actual image
+    tags: ['Irrigation', 'Water Resources', 'Field Study', 'Agricultural Engineering'],
+    image: '/images/CMIP.jpg',
+    links: [],
   },
   {
-    id: "tamor-irrigation",
-    title:
-      "Climate Change Impact on Irrigation in the Tamor River Basin",
+    id: 'gis-watershed-delineation',
+    title: 'GIS-Based Watershed Delineation and Hydrological Analysis',
     description:
-      "Study examining the implications of climate change on irrigation systems and food security in the Tamor River Basin.",
-    tags: ["Food Security", "Agroecosystem", "Climate Adaptation", "Tamor Basin"],
+      'Utilized Geographic Information System (GIS) tools and remote sensing data for watershed delineation and comprehensive hydrological analysis. The project involved processing DEM data, deriving stream networks, and analyzing catchment characteristics for water resource planning.',
     details: [
-      "Analyzed food security implications under changing climate scenarios",
-      "Explored sustainable agroecosystem practices for climate adaptation",
-      "Assessed irrigation water availability and demand projections",
+      'Watershed delineation using DEM and ArcGIS/QGIS tools',
+      'Stream network extraction and drainage analysis',
+      'Morphometric analysis of catchment area parameters',
+      'Hydrological modeling and runoff estimation',
     ],
-    image: "/images/project-2.jpg",
+    tags: ['GIS', 'Remote Sensing', 'Hydrology', 'Watershed Management'],
+    image: '/images/WatershedDelineationandHydrologicalAnalysis.jpg',
+    links: [],
   },
   {
-    id: "gis-watershed",
-    title:
-      "GIS-Based Watershed Delineation and Hydrological Analysis",
+    id: 'temperature-bias-correction',
+    title: 'Temperature Bias Correction of GCM Outputs',
     description:
-      "Application of ArcGIS for watershed delineation, stream network analysis, and hydrological characterization.",
-    tags: ["ArcGIS", "Watershed", "Hydrology", "Spatial Analysis"],
+      'Statistical bias correction of General Circulation Model (GCM) temperature outputs using various downscaling techniques. The study compared multiple GCMs and bias correction methods to improve the accuracy of future temperature projections for climate change impact assessment.',
     details: [
-      "Performed watershed delineation using DEM data in ArcGIS",
-      "Analyzed stream network and drainage characteristics",
-      "Conducted spatial data analysis for hydrological modeling",
+      'Comparison of temperature outputs from multiple GCMs',
+      'Application of statistical bias correction methods (e.g., Delta method, QM)',
+      'Analysis of historical vs. corrected future temperature projections',
+      'Evaluation of correction performance using statistical metrics',
     ],
-    image: "/images/project-3.jpg",
-  },
-  {
-    id: "temperature-bias-correction",
-    title:
-      "Temperature Bias Correction Using R",
-    description:
-      "Application of the qmap package in R for bias correction of historical and future temperature data.",
-    tags: ["R Programming", "Bias Correction", "qmap", "Climate Data"],
-    details: [
-      "Applied qmap package for statistical bias correction of temperature data",
-      "Corrected historical and future climate scenario data",
-      "Validated corrected outputs against observed station data",
-    ],
-    image: "/images/project-4.jpg",
+    tags: ['Climate Change', 'GCM', 'Bias Correction', 'Statistical Downscaling'],
+    image: '/images/BiasCorrection.jpg',
+    links: [],
   },
 ];
