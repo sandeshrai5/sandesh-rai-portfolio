@@ -8,6 +8,7 @@ export const publications: Publication[] = [
     journal: 'International Journal of Research Publication and Reviews (IJRPR), 6(8), 4309–4316',
     year: 2025,
     status: 'published',
+    doi: 'https://doi.org/10.55248/gengpi.6.0825.3118',
   },
   {
     id: 'h2open-2026',
@@ -16,12 +17,13 @@ export const publications: Publication[] = [
     journal: 'H2Open Journal, 9(4), 100039',
     year: 2026,
     status: 'published',
+    doi: 'https://doi.org/10.1016/j.htopen.2026.100039',
   },
   {
     id: 'ioe-conference-2025',
     title: 'How crop water requirements are projected to change with climate change in Chandra Mohan Irrigation Project in Nepal',
     authors: 'Rai, S., Chand, J., Poudyal, K. N., Ghimire, A.',
-    journal: 'Proceedings of IOE Graduate Conference (16th), 2025',
+    journal: 'Proceedings of IOE Graduate Conference (16th)',
     year: 2025,
     status: 'published',
   },

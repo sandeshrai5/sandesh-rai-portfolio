@@ -1,5 +1,6 @@
 "use client";
 
+import { ExternalLink } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { SectionWrapper } from "@/components/shared/SectionWrapper";
 import { SectionContactStrip } from "@/components/shared/SectionContactStrip";
@@ -36,7 +37,7 @@ export function PublicationsSection() {
                 <div className="space-y-4">
                   {items.map((pub: Publication, index: number) => (
                     <ScrollReveal key={pub.id} delay={index * 0.05}>
-                      <div className="rounded-lg border p-5 space-y-2">
+                      <div className="rounded-lg border p-5 space-y-3">
                         <h4 className="text-sm font-semibold text-primary leading-snug">
                           {pub.title}
                         </h4>
@@ -46,6 +47,17 @@ export function PublicationsSection() {
                         <p className="text-xs text-muted-foreground italic">
                           {pub.journal} ({pub.year})
                         </p>
+                        {"doi" in pub && (pub as Record<string, unknown>).doi ? (
+                          <a
+                            href={(pub as Record<string, unknown>).doi as string}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-teal hover:text-primary flex items-center gap-1 transition-colors"
+                          >
+                            {(pub as Record<string, unknown>).doi as string}
+                            <ExternalLink className="h-3 w-3" />
+                          </a>
+                        ) : null}
                       </div>
                     </ScrollReveal>
                   ))}
