@@ -21,10 +21,10 @@ export function ResearchSection() {
             <div className="h-full rounded-lg border bg-card text-card-foreground shadow-sm transition-all duration-300 hover:shadow-lg hover:border-teal-400 overflow-hidden">
               <div className="space-y-3 p-5">
                 {/* Project Image */}
-                {project.image ? (
+                {project.images && project.images.length > 0 ? (
                   <div className="relative h-48 w-full overflow-hidden rounded-md">
                     <Image
-                      src={project.images}
+                      src={project.images[0]}
                       alt={project.title}
                       fill
                       className="object-cover"

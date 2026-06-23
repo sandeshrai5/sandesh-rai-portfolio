@@ -13,7 +13,7 @@ export const projects: Project[] = [
       'Proposed sustainable water management strategies for local farmers',
     ],
     tags: ['Irrigation', 'Water Resources', 'Field Study', 'Agricultural Engineering'],
-    images: '/images/CMIP.jpg',
+    images: ['/images/CMIP.jpg'],
     links: [],
   },
   {
@@ -28,7 +28,7 @@ export const projects: Project[] = [
       'Hydrological modeling and runoff estimation',
     ],
     tags: ['GIS', 'Remote Sensing', 'Hydrology', 'Watershed Management'],
-    images: '/images/WatershedDelineationandHydrologicalAnalysis.jpg',
+    images: ['/images/WatershedDelineationandHydrologicalAnalysis.jpg'],
     links: [],
   },
   {
@@ -43,7 +43,7 @@ export const projects: Project[] = [
       'Evaluation of correction performance using statistical metrics',
     ],
     tags: ['Climate Change', 'GCM', 'Bias Correction', 'Statistical Downscaling'],
-    images: '/images/BiasCorrection.jpg',
+    images: ['/images/BiasCorrection.jpg'],
     links: [],
   },
 ];
