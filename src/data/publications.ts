@@ -8,7 +8,6 @@ export const publications: Publication[] = [
     journal: 'International Journal of Research Publication and Reviews (IJRPR), 6(8), 4309–4316',
     year: 2025,
     status: 'published',
-    doi: 'https://doi.org/10.55248/gengpi.6.0825.3118',
   },
   {
     id: 'h2open-2026',
@@ -17,7 +16,6 @@ export const publications: Publication[] = [
     journal: 'H2Open Journal, 9(4), 100039',
     year: 2026,
     status: 'published',
-    doi: 'https://doi.org/10.1016/j.htopen.2026.100039',
   },
   {
     id: 'ioe-conference-2025',
@@ -28,6 +26,11 @@ export const publications: Publication[] = [
     status: 'published',
   },
 ];
+
+export const doiLinks: Record<string, string> = {
+  'ijrpr-2025': 'https://doi.org/10.55248/gengpi.6.0825.3118',
+  'h2open-2026': 'https://doi.org/10.1016/j.htopen.2026.100039',
+};
 
 export function getPublicationsByStatus() {
   const grouped: Record<string, Publication[]> = {};

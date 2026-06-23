@@ -4,7 +4,7 @@ import { ExternalLink } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { SectionWrapper } from "@/components/shared/SectionWrapper";
 import { SectionContactStrip } from "@/components/shared/SectionContactStrip";
-import { getPublicationsByStatus } from "@/data/publications";
+import { getPublicationsByStatus, doiLinks } from "@/data/publications";
 import { Publication } from "@/types";
 
 export function PublicationsSection() {
@@ -47,17 +47,17 @@ export function PublicationsSection() {
                         <p className="text-xs text-muted-foreground italic">
                           {pub.journal} ({pub.year})
                         </p>
-                        {"doi" in pub && (pub as Record<string, unknown>).doi ? (
+                        {doiLinks[pub.id] && (
                           <a
-                            href={(pub as Record<string, unknown>).doi as string}
+                            href={doiLinks[pub.id]}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-xs text-teal hover:text-primary flex items-center gap-1 transition-colors"
                           >
-                            {(pub as Record<string, unknown>).doi as string}
+                            {doiLinks[pub.id]}
                             <ExternalLink className="h-3 w-3" />
                           </a>
-                        ) : null}
+                        )}
                       </div>
                     </ScrollReveal>
                   ))}
