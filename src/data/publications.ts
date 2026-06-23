@@ -36,7 +36,7 @@ export function getPublicationsByStatus() {
   return {
     published: publications.filter((p) => p.status === "published"),
     accepted: publications.filter((p) => p.status === "accepted"),
-    inProgress: publications.filter((p) => p.status === "in_progress"),
+    in_progress: publications.filter((p) => p.status === "in_progress"),
     submitted: publications.filter((p) => p.status === "submitted"),
   };
 }

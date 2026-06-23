@@ -41,10 +41,8 @@ export function Navbar() {
         <div className="flex items-center gap-2 lg:hidden">
           <ThemeToggle />
           <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger>
-              <Button variant="ghost" size="icon" className="h-9 w-9">
-                {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-              </Button>
+            <SheetTrigger className="inline-flex items-center justify-center rounded-lg h-9 w-9 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors">
+              {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </SheetTrigger>
             <SheetContent side="right" className="w-72">
               <nav className="flex flex-col gap-1 mt-8">
