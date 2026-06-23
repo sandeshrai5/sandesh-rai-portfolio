@@ -38,7 +38,7 @@ export const projects: Project[] = [
       'Statistical bias correction of General Circulation Model (GCM) temperature outputs using various downscaling techniques. The study compared multiple GCMs and bias correction methods to improve the accuracy of future temperature projections for climate change impact assessment.',
     details: [
       'Comparison of temperature outputs from multiple GCMs',
-      'Application of statistical bias correction methods (e.g., Delta method, QM)',
+      'Application of statistical bias correction methods (e.g. Quantile Mapping)',
       'Analysis of historical vs. corrected future temperature projections',
       'Evaluation of correction performance using statistical metrics',
     ],
