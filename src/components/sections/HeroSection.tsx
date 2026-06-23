@@ -47,7 +47,7 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-4 text-lg sm:text-xl text-teal font-medium"
         >
-          Climate Change Researcher | GIS &amp; Remote Sensing Analyst
+          Agricultural Engineer | Climate Change Researcher | Water Resources &amp; Irrigation Specialist
         </motion.p>
 
         {/* Bio */}
