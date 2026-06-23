@@ -2,6 +2,14 @@ import type { Education } from "@/types";
 
 export const education: Education[] = [
   {
+    degree: "Master's of Arts in Economics",
+    institution: "Tribhuvan University, Ratna Rajyalaxmi Campus",
+    location: "Pradarshanimarga, Kathmandu",
+    period: "April 2026 — Present",
+    description:
+      "Studying economics enhances my analytical and policy understanding of resource management, supporting sustainable development and climate-resilient decision-making.",
+  },
+  {
     degree: "MSc in Climate Change and Development",
     institution: "Pulchowk Campus, IOE, Tribhuvan University",
     location: "Lalitpur, Nepal",
