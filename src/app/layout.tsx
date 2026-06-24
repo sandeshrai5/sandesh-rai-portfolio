@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/layout/ThemeProvider";
+import { ThemeProvider } from "next-themes";
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import { ContactSidebar } from "@/components/contact/ContactSidebar";
 import { FloatingContactButton } from "@/components/contact/FloatingContactButton";
 
@@ -12,35 +11,33 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const geistMono = Geist({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Sandesh Rai | Climate Change Researcher & GIS Analyst",
+  title: "Sandesh Rai | Climate Change Researcher",
   description:
-    "Portfolio of Sandesh Rai — MSc in Climate Change and Development, specializing in water resources, irrigation systems, hydrological modeling, GIS, and remote sensing in Nepal.",
+    "Agricultural Engineer | Climate Change Researcher | Water Resources & Irrigation Specialist. Based in Kathmandu, Nepal.",
   keywords: [
     "Sandesh Rai",
     "Climate Change",
+    "Agricultural Engineering",
     "Water Resources",
+    "Irrigation",
+    "Nepal",
     "GIS",
     "Remote Sensing",
-    "Hydrological Modeling",
-    "Nepal",
-    "Irrigation",
-    "Researcher",
   ],
   authors: [{ name: "Sandesh Rai" }],
   openGraph: {
-    title: "Sandesh Rai | Climate Change Researcher & GIS Analyst",
+    title: "Sandesh Rai | Climate Change Researcher",
     description:
-      "Portfolio of Sandesh Rai — specializing in climate change impacts on water resources and irrigation systems in Nepal.",
-    url: "https://sandeshrai.info.np",
-    siteName: "Sandesh Rai Portfolio",
-    locale: "en_US",
+      "Agricultural Engineer | Climate Change Researcher | Water Resources & Irrigation Specialist",
     type: "website",
+    locale: "en_US",
+    url: "https://sandeshrai.info.np",
   },
 };
 
@@ -52,14 +49,20 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
           <Navbar />
-          <ContactSidebar />
+          <div className="flex">
+            <main className="flex-1">{children}</main>
+            <ContactSidebar />
+          </div>
           <FloatingContactButton />
-          <main>{children}</main>
-          <Footer />
         </ThemeProvider>
       </body>
     </html>
