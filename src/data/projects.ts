@@ -46,4 +46,18 @@ export const projects: Project[] = [
     images: ['/images/BiasCorrection.jpg'],
     links: [],
   },
+  {
+    id: 'undp-climate-resilient-farming',
+    title: 'Hands-on Training on Climate Resilient Sustainable Farming Practices',
+    description:
+      'Organized in Harisiddhi, Lalitpur with funding support from UNDP Nepal and Clean Energy Nepal. The training aimed to build capacity among local farmers to adapt neagtive impact of climate change through sustainable agricultural practices.',
+    details: [
+      'Train the farmers to cope with climate change',
+      'Train them and introduce them the climate resilient sustainable farming practices',
+      'Make them able to make organic fertilizer and reduce the chemical fertilizer which will hamper the health condition of farmers and environment',
+    ],
+    tags: ['Climate Resilience', 'Sustainable Farming', 'UNDP', 'Training'],
+    images: ['/images/UNDPTraining.jpg'],
+    links: [],
+  },
 ];
