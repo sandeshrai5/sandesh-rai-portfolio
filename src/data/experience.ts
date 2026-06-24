@@ -41,8 +41,8 @@ export const experiences: Experience[] = [
     type: 'training',
     description:
       'Attended as a Youth Delegate at UNEA-7, engaging with global environmental policy discussions and representing youth perspectives on environmental governance and sustainability.',
-      image: '/images/Keneya.jpg',
-    },
+    image: '/images/Keneya.jpg',
+  },
   {
     id: 'oecpr-7',
     title: 'Open-Ended Committee of Permanent Representatives (OECPR-7)',
@@ -52,7 +52,7 @@ export const experiences: Experience[] = [
     type: 'training',
     description:
       'Participated as a Youth Delegate at OECPR-7, contributing to preparatory discussions for UNEA-7 on global environmental policies and resolutions.',
-      image: '/images/grouppicture.jpg',  
+      image: '/images/UNEP.jpg',
   },
   {
     id: 'youth-environmental-assembly-2025',
@@ -63,6 +63,7 @@ export const experiences: Experience[] = [
     type: 'training',
     description:
       'Attended as a Youth Delegate at the Youth Environmental Assembly 2025 held at UNEP Headquarters, engaging with youth climate activists and environmental leaders from around the world.',
+    image: '/images/grouppicture.jpg',
   },
   {
     id: 'yecap-fellowship',
@@ -73,7 +74,7 @@ export const experiences: Experience[] = [
     type: 'training',
     description:
       'Selected for the YECAP Nepal Shakers Fellowship 2025, a 5-day intensive program focused on youth-led climate action, environmental advocacy, and sustainable development in Nepal.',
-    image: '/images/UNEP.jpg',
+    image: '/images/UNDP.jpg',
   },
   {
     id: 'sustainability-literacy',
@@ -121,7 +122,7 @@ export const experiences: Experience[] = [
     organization: 'Simikot Gaupalika',
     location: 'Humla',
     period: '5 June 2024',
-    type: 'training',
+    type: 'research',
     description:
       'Consulting work for the purchase of agricultural mechanization equipment, including design of Technical Specification document.',
   },
@@ -131,7 +132,7 @@ export const experiences: Experience[] = [
     organization: 'Chauri Deurali Rural Municipality',
     location: 'Kavrepalanchok',
     period: '11 April 2024',
-    type: 'training',
+    type: 'research',
     description:
       'Consulting work for the purchase of agricultural mechanization equipment, including design of Technical Specification document.',
   },

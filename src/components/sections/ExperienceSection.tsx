@@ -1,81 +1,82 @@
 "use client";
 
-import { Briefcase, Award, BookOpen, GraduationCap } from "lucide-react";
+import Image from "next/image";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { SectionWrapper } from "@/components/shared/SectionWrapper";
 import { SectionContactStrip } from "@/components/shared/SectionContactStrip";
 import { experiences } from "@/data/experience";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Graduate } from "next/font/google";
+import { Experience } from "@/types";
 
-const typeConfig = {
-  training: { label: "Training", icon: BookOpen },
-  workshop: { label: "Workshop", icon: Briefcase },
-  research: { label: "Research", icon: Award },
-  certification: { label: "Certification", icon: GraduationCap },
+const typeLabels: Record<string, string> = {
+  training: "Training & Fellowship",
+  workshop: "Workshop & Conference",
+  research: "Professional Experience",
+  certification: "Certification",
+};
+
+const typeColors: Record<string, string> = {
+  training: "bg-teal-500",
+  workshop: "bg-blue-500",
+  research: "bg-primary",
+  certification: "bg-amber-500",
 };
 
 export function ExperienceSection() {
-  const hasRealExperience =
-    experiences.length > 0 && experiences[0].id !== "exp-placeholder";
-
   return (
     <SectionWrapper
       id="experience"
       title="Experience & Training"
-      subtitle="Professional development through workshops, research, and technical training"
+      subtitle="Professional work, training programs, fellowships, and conferences"
     >
-      {hasRealExperience ? (
-        <div className="max-w-3xl mx-auto space-y-4">
-          {experiences.map((exp, index) => {
-            const config = typeConfig[exp.type];
-            const Icon = config?.icon || Briefcase;
-            return (
-              <ScrollReveal key={exp.id} delay={index * 0.1}>
-                <Card className="border-border/50 hover:border-teal/30 transition-colors">
-                  <CardContent className="p-5">
-                    <div className="flex items-start gap-4">
-                      <div className="h-10 w-10 rounded-lg bg-teal/10 flex items-center justify-center shrink-0">
-                        <Icon className="h-5 w-5 text-teal" />
-                      </div>
-                      <div className="space-y-1">
-                        <h3 className="text-base font-semibold text-primary">
-                          {exp.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          {exp.organization}
-                          {exp.location && ` — ${exp.location}`}
-                        </p>
-                        <div className="flex items-center gap-2">
-                          <span className="text-xs text-muted-foreground">
-                            {exp.period}
-                          </span>
-                          {config && (
-                            <Badge variant="secondary" className="text-xs">
-                              {config.label}
-                            </Badge>
-                          )}
-                        </div>
-                        <p className="text-sm text-muted-foreground leading-relaxed mt-2">
-                          {exp.description}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </ScrollReveal>
-            );
-          })}
-        </div>
-      ) : (
-        <ScrollReveal>
-          <div className="text-center py-8 text-muted-foreground">
-            <Briefcase className="h-12 w-12 mx-auto mb-3 opacity-30" />
-            <p>Experience details will be added here soon.</p>
-          </div>
-        </ScrollReveal>
-      )}
+      <div className="max-w-4xl mx-auto space-y-6">
+        {experiences.map((exp: Experience, index: number) => (
+          <ScrollReveal key={exp.id} delay={index * 0.05}>
+            <div className="flex gap-4">
+              <div className="flex flex-col items-center pt-1">
+                <div
+                  className={`h-3 w-3 rounded-full ${typeColors[exp.type] || "bg-primary"}`}
+                />
+                {index < experiences.length - 1 && (
+                  <div className="w-px flex-1 bg-border mt-1" />
+                )}
+              </div>
+
+              <div className="flex-1 pb-6">
+                <div className="flex flex-wrap items-center gap-2 mb-1">
+                  <h3 className="text-sm font-semibold text-primary">
+                    {exp.title}
+                  </h3>
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-secondary text-muted-foreground">
+                    {typeLabels[exp.type] || exp.type}
+                  </span>
+                </div>
+                <p className="text-xs text-muted-foreground mb-1">
+                  {exp.organization} &middot; {exp.location}
+                </p>
+                <p className="text-xs text-muted-foreground mb-2 font-medium">
+                  {exp.period}
+                </p>
+
+                {exp.image && (
+                  <div className="relative w-full max-w-sm h-48 overflow-hidden rounded-md mb-3">
+                    <Image
+                      src={exp.image}
+                      alt={exp.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 384px"
+                    />
+                  </div>
+                )}
+
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {exp.description}
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+        ))}
+      </div>
       <SectionContactStrip />
     </SectionWrapper>
   );
