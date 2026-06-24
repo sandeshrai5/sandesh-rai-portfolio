@@ -4,14 +4,16 @@ import { ExternalLink } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { SectionWrapper } from "@/components/shared/SectionWrapper";
 import { SectionContactStrip } from "@/components/shared/SectionContactStrip";
-import { getPublicationsByStatus, doiLinks } from "@/data/publications";
+import { getPublicationsByStatus } from "@/data/publications";
 import { Publication } from "@/types";
 
 export function PublicationsSection() {
   const grouped = getPublicationsByStatus();
   const statusLabels: Record<string, string> = {
     published: "Published",
+    accepted: "Accepted",
     in_progress: "In Progress",
+    submitted: "Submitted",
   };
 
   return (
@@ -47,14 +49,14 @@ export function PublicationsSection() {
                         <p className="text-xs text-muted-foreground italic">
                           {pub.journal} ({pub.year})
                         </p>
-                        {doiLinks[pub.id] && (
+                        {pub.url && (
                           <a
-                            href={doiLinks[pub.id]}
+                            href={pub.url}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-xs text-teal hover:text-primary flex items-center gap-1 transition-colors"
                           >
-                            {doiLinks[pub.id]}
+                            {pub.doi || pub.url}
                             <ExternalLink className="h-3 w-3" />
                           </a>
                         )}

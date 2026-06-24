@@ -71,6 +71,7 @@ export interface Experience {
   period: string;
   description: string;
   type: "training" | "workshop" | "research" | "certification";
+  image?: string;
 }
 
 // Achievement
