@@ -81,6 +81,7 @@ export interface Achievement {
   description: string;
   year: string;
   type: "academic" | "conference" | "research" | "award";
+  image?: string;
 }
 
 // Research Interest
