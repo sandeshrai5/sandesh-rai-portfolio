@@ -52,10 +52,10 @@ export function ContactSection() {
                 <div>
                   <p className="text-sm font-medium">Email</p>
                   <a
-                    href="mailto:sandeshrai577@gmail.com"
+                    href="mailto:sandeshchamlingrai5@gmail.com"
                     className="text-sm text-muted-foreground hover:text-teal-500 transition-colors"
                   >
-                    sandeshrai577@gmail.com
+                    sandeshchamlingrai5@gmail.com
                   </a>
                 </div>
               </div>
@@ -63,7 +63,7 @@ export function ContactSection() {
                 <MapPin className="h-5 w-5 text-teal-500 mt-0.5" />
                 <div>
                   <p className="text-sm font-medium">Location</p>
-                  <p className="text-sm text-muted-foreground">Kathmandu, Nepal</p>
+                  <p className="text-sm text-muted-foreground">Dharan, Nepal</p>
                 </div>
               </div>
             </div>
