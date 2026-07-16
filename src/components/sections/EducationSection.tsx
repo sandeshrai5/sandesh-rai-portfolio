@@ -1,82 +1,60 @@
 "use client";
 
-import Image from "next/image";
+import { GraduationCap } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { SectionWrapper } from "@/components/shared/SectionWrapper";
 import { SectionContactStrip } from "@/components/shared/SectionContactStrip";
-import { experiences } from "@/data/experience";
-import { Experience } from "@/types";
+import { education } from "@/data/education";
+import { Card, CardContent } from "@/components/ui/card";
 
-const typeLabels: Record<string, string> = {
-  training: "Training & Fellowship",
-  workshop: "Workshop & Conference",
-  research: "Professional Experience",
-  certification: "Certification",
-};
-
-const typeColors: Record<string, string> = {
-  training: "bg-teal-500",
-  workshop: "bg-blue-500",
-  research: "bg-primary",
-  certification: "bg-amber-500",
-};
-
-export function ExperienceSection() {
+export function EducationSection() {
   return (
     <SectionWrapper
-      id="experience"
-      title="Experience & Training"
-      subtitle="Professional work, training programs, fellowships, and conferences"
+      id="education"
+      title="Education"
+      subtitle="Academic background in Climate Change, Agricultural Engineering, and Water Resources"
     >
-      <div className="max-w-4xl mx-auto space-y-6">
-        {experiences.map((exp: Experience, index: number) => (
-          <ScrollReveal key={exp.id} delay={index * 0.05}>
-            <div className="flex gap-4">
-              {/* Timeline dot */}
-              <div className="flex flex-col items-center pt-1">
-                <div
-                  className={`h-3 w-3 rounded-full ${typeColors[exp.type] || "bg-primary"}`}
-                />
-                {index < experiences.length - 1 && (
-                  <div className="w-px flex-1 bg-border mt-1" />
-                )}
-              </div>
-
-              {/* Content */}
-              <div className="flex-1 pb-6">
-                <div className="flex flex-wrap items-center gap-2 mb-1">
-                  <h3 className="text-sm font-semibold text-primary">
-                    {exp.title}
-                  </h3>
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-secondary text-muted-foreground">
-                    {typeLabels[exp.type] || exp.type}
-                  </span>
-                </div>
-                <p className="text-xs text-muted-foreground mb-1">
-                  {exp.organization} &middot; {exp.location}
-                </p>
-                <p className="text-xs text-muted-foreground mb-2 font-medium">
-                  {exp.period}
-                </p>
-
-                {/* Photo */}
-                {exp.image && (
-                  <div className="relative w-full max-w-sm h-48 overflow-hidden rounded-md mb-3">
-                    <Image
-                      src={exp.image}
-                      alt={exp.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 384px"
-                    />
+      <div className="max-w-3xl mx-auto space-y-6">
+        {education.map((edu, index) => (
+          <ScrollReveal key={index} delay={index * 0.15}>
+            <Card className="border-border/50 hover:border-teal/30 transition-colors">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="h-12 w-12 rounded-lg bg-teal/10 flex items-center justify-center shrink-0">
+                    <GraduationCap className="h-6 w-6 text-teal" />
                   </div>
-                )}
-
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {exp.description}
-                </p>
-              </div>
-            </div>
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold text-primary">
+                      {edu.degree}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      {edu.institution}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {edu.location} &middot; {edu.period}
+                    </p>
+                    {edu.description && (
+                      <p className="text-sm text-muted-foreground leading-relaxed mt-2">
+                        {edu.description}
+                      </p>
+                    )}
+                    {edu.highlights && edu.highlights.length > 0 && (
+                      <ul className="space-y-1 mt-2">
+                        {edu.highlights.map((highlight, i) => (
+                          <li
+                            key={i}
+                            className="text-sm text-muted-foreground flex items-start gap-2"
+                          >
+                            <span className="text-teal mt-1.5">&#8226;</span>
+                            {highlight}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </ScrollReveal>
         ))}
       </div>
