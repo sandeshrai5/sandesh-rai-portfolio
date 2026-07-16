@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { SectionWrapper } from "@/components/shared/SectionWrapper";
 import { SectionContactStrip } from "@/components/shared/SectionContactStrip";
-import { experiences } from '@/data/experiences';
+import { experiences } from '@/data/experience';
 import { Experience } from "@/types";
 
 const typeLabels: Record<string, string> = {
