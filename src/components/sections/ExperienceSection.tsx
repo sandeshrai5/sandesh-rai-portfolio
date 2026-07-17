@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { SectionWrapper } from "@/components/shared/SectionWrapper";
 import { SectionContactStrip } from "@/components/shared/SectionContactStrip";
-import { experiences } from '@/data/experience';
+import { experiences } from "@/data/experience";
 import { Experience } from "@/types";
 
 const typeLabels: Record<string, string> = {
@@ -58,7 +58,7 @@ export function ExperienceSection() {
                 </p>
 
                 {exp.image && (
-                  <div className="relative w-full max-w-sm h-48 overflow-hidden rounded-md mb-3">
+                  <div className="relative w-full max-w-sm h-48 overflow-hidden rounded-md mb-3 bg-neutral-800">
                     <Image
                       src={exp.image}
                       alt={exp.title}

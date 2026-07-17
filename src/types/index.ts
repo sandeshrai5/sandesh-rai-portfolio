@@ -72,6 +72,10 @@ export interface Experience {
   description: string;
   type: "training" | "workshop" | "research" | "certification";
   image?: string;
+  links?: {
+    label: string;
+    url: string;
+  }[];
 }
 
 // Achievement

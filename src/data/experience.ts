@@ -1,4 +1,4 @@
-import {Experience} from '@/types';
+import { Experience } from '@/types';
 
 export const experiences: Experience[] = [
   {
@@ -18,6 +18,7 @@ export const experiences: Experience[] = [
     location: 'Online',
     period: '23 March 2026',
     type: 'certification',
+    image: '/images/NetZero.jpg',
     description:
       'Completed e-learning course on Net Zero concepts, covering the fundamentals of achieving net-zero emissions, strategies for carbon neutrality, and global sustainability frameworks.',
   },
@@ -28,9 +29,9 @@ export const experiences: Experience[] = [
     location: 'Kathmandu, Nepal',
     period: '5–6 February 2026',
     type: 'workshop',
+    image: '/images/COnference.jpg',
     description:
-      'Participated in the International Conference on Agricultural Engineering and Climate Smart Agriculture, focusing on innovative approaches to sustainable agriculture and climate resilience in Nepal.',
-    image: '/images/AgriConference2026.jpg',
+      'International Conference 2026 on Agricultural Engineering & Climate Smart Agriculture Participated in the International Conference on Agricultural Engineering and Climate Smart Agriculture, focusing on innovative approaches to sustainable agriculture and climate resilience in Nepal.',
   },
   {
     id: 'unea-7',
@@ -39,8 +40,9 @@ export const experiences: Experience[] = [
     location: 'Nairobi, Kenya',
     period: '8–12 December 2025',
     type: 'training',
+    image: '/images/Keneya.jpg',
     description:
-      'Attended as a Youth Delegate at UNEA-7, engaging with global environmental policy discussions and representing youth perspectives on environmental governance and sustainability.',
+      'The 7th Session of the United Nations Environment Assembly (UNEA-7) Attended as a Youth Delegate at UNEA-7, engaging with global environmental policy discussions and representing youth perspectives on environmental governance and sustainability.',
   },
   {
     id: 'oecpr-7',
@@ -49,8 +51,9 @@ export const experiences: Experience[] = [
     location: 'Nairobi, Kenya',
     period: '1–5 December 2025',
     type: 'training',
+    image: '/images/UNEP.jpg',
     description:
-      'Participated as a Youth Delegate at OECPR-7, contributing to preparatory discussions for UNEA-7 on global environmental policies and resolutions.',
+      'Open-Ended Committee of Permanent Representatives (OECPR-7) Participated as a Youth Delegate at OECPR-7, contributing to preparatory discussions for UNEA-7 on global environmental policies and resolutions.',
   },
   {
     id: 'youth-environmental-assembly-2025',
@@ -59,8 +62,9 @@ export const experiences: Experience[] = [
     location: 'Nairobi, Kenya',
     period: '29–30 November 2025',
     type: 'training',
+    image: '/images/grouppicture.jpg',
     description:
-      'Attended as a Youth Delegate at the Youth Environmental Assembly 2025 held at UNEP Headquarters, engaging with youth climate activists and environmental leaders from around the world.',
+      'Youth Environmental Assembly 2025 Attended as a Youth Delegate at the Youth Environmental Assembly 2025 held at UNEP Headquarters, engaging with youth climate activists and environmental leaders from around the world.',
   },
   {
     id: 'yecap-fellowship',
@@ -69,9 +73,9 @@ export const experiences: Experience[] = [
     location: 'Nepal',
     period: '20–24 November 2025',
     type: 'training',
+    image: '/images/UNDP.jpg',
     description:
-      'Selected for the YECAP Nepal Shakers Fellowship 2025, a 5-day intensive program focused on youth-led climate action, environmental advocacy, and sustainable development in Nepal.',
-    image: '/images/YECAPFellowship.jpg',
+      'YECAP Nepal Shakers Fellowship 2025 Selected for the YECAP Nepal Shakers Fellowship 2025, a 5-day intensive program focused on youth-led climate action, environmental advocacy, and sustainable development in Nepal.',
   },
   {
     id: 'sustainability-literacy',
@@ -80,6 +84,7 @@ export const experiences: Experience[] = [
     location: 'Nepal',
     period: '4–15 August 2025',
     type: 'training',
+    image: '/images/SustainablityLeteracyCertificate.jpg',
     description:
       'Completed a two-week Sustainability Literacy program covering sustainable development goals, corporate sustainability practices, and environmental stewardship frameworks.',
   },
@@ -119,7 +124,7 @@ export const experiences: Experience[] = [
     organization: 'Simikot Gaupalika',
     location: 'Humla',
     period: '5 June 2024',
-    type: 'training',
+    type: 'research',
     description:
       'Consulting work for the purchase of agricultural mechanization equipment, including design of Technical Specification document.',
   },
@@ -129,9 +134,19 @@ export const experiences: Experience[] = [
     organization: 'Chauri Deurali Rural Municipality',
     location: 'Kavrepalanchok',
     period: '11 April 2024',
-    type: 'training',
+    type: 'research',
     description:
       'Consulting work for the purchase of agricultural mechanization equipment, including design of Technical Specification document.',
+  },
+  {
+    id: 'Dordi Rural Municipality',
+    title: 'Agricultural Engineer Consultant',
+    organization: 'Dordi Rural Municipality',
+    location: 'Lamjung',
+    period: '1 July 2026',
+    type: 'research',
+    description:
+      'Consulting work for the purchase of agricultural mechanization equipment such as (Mini-Tiller, Coffee Pulper, Brush Cutter and Elctric Dryer), including design of Technical Specification document.',
   },
   {
     id: 'shanta-consultants',
